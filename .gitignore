@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*$py.class
+
+
+# Pycharm
+.idea/*
+
+# results dir
+/results
+/files
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# macOS cache files
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Network Storage files
+.Spotlight-V100
+.Trashes
