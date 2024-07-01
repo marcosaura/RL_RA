@@ -1,0 +1,26 @@
+[2024-05-26 22:40:02,840][train][INFO][main.py><module>] ==> Path: /home/marcos/Desktop/Atari_100k/EfficientZero_RA_16/EfficientZero_RA_16/results/atari/none/BoxingNoFrameskip-v4/seed=0/Sun May 26 22:40:02 2024
+[2024-05-26 22:40:02,840][train][INFO][main.py><module>] ==> Param: {'action_space_size': 18, 'num_actors': 1, 'do_consistency': True, 'use_value_prefix': True, 'off_correction': True, 'gray_scale': False, 'auto_td_steps_ratio': 0.3, 'episode_life': True, 'change_temperature': True, 'init_zero': True, 'state_norm': False, 'clip_reward': True, 'random_start': True, 'cvt_string': True, 'image_based': True, 'max_moves': 3000, 'test_max_moves': 3000, 'history_length': 400, 'num_simulations': 50, 'discount': 0.988053892081, 'max_grad_norm': 5, 'test_interval': 10000, 'test_episodes': 32, 'value_delta_max': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'training_steps': 100000, 'last_steps': 20000, 'checkpoint_interval': 100, 'target_model_interval': 200, 'save_ckpt_interval': 10000, 'log_interval': 1000, 'vis_interval': 1000, 'start_transitions': 2000, 'total_transitions': 100000, 'transition_num': 1, 'batch_size': 256, 'num_unroll_steps': 5, 'td_steps': 5, 'frame_skip': 4, 'stacked_observations': 4, 'lstm_hidden_size': 512, 'lstm_horizon_len': 5, 'reward_loss_coeff': 1, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1, 'consistency_coeff': 2, 'device': 'cuda', 'debug': False, 'seed': 0, 'value_support': <core.config.DiscreteSupport object at 0x7f8d809837f0>, 'reward_support': <core.config.DiscreteSupport object at 0x7f8d809832e0>, 'weight_decay': 0.0001, 'momentum': 0.9, 'lr_warm_up': 0.01, 'lr_warm_step': 1000, 'lr_init': 0.2, 'lr_decay_rate': 0.1, 'lr_decay_steps': 100000, 'mini_infer_size': 64, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'image_channel': 3, 'proj_hid': 1024, 'proj_out': 1024, 'pred_hid': 512, 'pred_out': 1024, 'bn_mt': 0.1, 'blocks': 1, 'channels': 64, 'reduced_channels_reward': 16, 'reduced_channels_value': 16, 'reduced_channels_policy': 16, 'resnet_fc_reward_layers': [32], 'resnet_fc_value_layers': [32], 'resnet_fc_policy_layers': [32], 'downsample': True, 'env_name': 'BoxingNoFrameskip-v4', 'obs_shape': (12, 96, 96), 'case': 'atari', 'amp_type': 'torch_amp', 'use_priority': True, 'use_max_priority': True, 'cpu_actor': 5, 'gpu_actor': 5, 'p_mcts_num': 1, 'use_root_value': False, 'auto_td_steps': 30000.0, 'use_augmentation': True, 'augmentation': ['shift', 'intensity'], 'revisit_policy_search_rate': 0.99, 'model_dir': '/home/marcos/Desktop/Atari_100k/EfficientZero_RA_16/EfficientZero_RA_16/results/atari/none/BoxingNoFrameskip-v4/seed=0/Sun May 26 22:40:02 2024/model'}
+[2024-05-26 22:40:05,754][root][ERROR][main.py><module>] ==> shape '[2592, 1]' is invalid for input of size 2430
+Traceback (most recent call last):
+  File "/home/marcos/Desktop/Atari_100k/EfficientZero_RA_16/EfficientZero_RA_16/main.py", line 98, in <module>
+    model, weights = train(game_config, summary_writer, model_path)
+  File "/home/marcos/Desktop/Atari_100k/EfficientZero_RA_16/EfficientZero_RA_16/core/train.py", line 468, in train
+    final_weights = _train(model, target_model, replay_buffer, storage, batch_storage, config, summary_writer)
+  File "/home/marcos/Desktop/Atari_100k/EfficientZero_RA_16/EfficientZero_RA_16/core/train.py", line 345, in _train
+    model = model.to(config.device)
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1160, in to
+    return self._apply(convert)
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 810, in _apply
+    module._apply(fn)
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 810, in _apply
+    module._apply(fn)
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 810, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/rnn.py", line 218, in _apply
+    self._init_flat_weights()
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/rnn.py", line 155, in _init_flat_weights
+    self.flatten_parameters()
+  File "/home/marcos/.local/lib/python3.10/site-packages/torch/nn/modules/rnn.py", line 206, in flatten_parameters
+    torch._cudnn_rnn_flatten_weight(
+RuntimeError: shape '[2592, 1]' is invalid for input of size 2430
